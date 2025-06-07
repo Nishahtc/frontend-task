@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordian</title>
+    <style>
+        body {
+            background-color: rgb(219, 175, 181);
+        }
+
+
+        .accordion-item{
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            border: none;
+            text-align: left;
+            font-size: 1.2rem;
+            padding: 12px;
+           margin-inline: auto;
+           width: 50%;
+           
+        }
+
+       .accordion-text{
+        display: none;
+       }
+      
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+       
+        <div class="accordion-item">
+            <h3 class="accordion-heading">Question 1</h3>
+            <p class="accordion-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Odit corporis fugiat, dicta suscipit cumque nemo.</p>
+              
+        </div>
+        <div class="accordion-item">
+            <h3 class="accordion-heading">Question 2</h3>
+            <p class="accordion-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Odit corporis fugiat, dicta suscipit cumque nemo. Lorem ipsum dolor sit,
+                 amet consectetur adipisicing elit. Molestiae, iste.</p>
+        </div>
+        <div class="accordion-item">
+            <h3 class="accordion-heading">Question 3</h3>
+            <p class="accordion-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Odit corporis fugiat, dicta suscipit cumque nemo.</p>
+        </div>
+        <div class="accordion-item">
+            <h3 class="accordion-heading">Question 4</h3>
+            <p class="accordion-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Odit corporis fugiat, dicta suscipit cumque nemo.</p>
+        </div>
+        <div class="accordion-item">
+            <h3 class="accordion-heading">Question 5</h3>
+            <p class="accordion-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Odit corporis fugiat, dicta suscipit cumque nemo.</p>
+        </div>
+       
+    </div>
+    <script>
+        const accordion = document.querySelectorAll('.accordion-heading')
+        accordion.forEach(heading =>{
+            heading.addEventListener('click', ()=>{
+                const  text  = heading.nextElementSibling;
+                if(text.style.display  == 'block'){
+                    text.style.display = 'none'
+                }
+                else{
+                    text.style.display = 'block'
+                }
+            })
+            
+        })
+        
+    </script>
+
+</body>
+
+</html>
