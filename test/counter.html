@@ -6,18 +6,18 @@
     <title>Paragraph  click counter</title>
     <style>
         body{
-            background-color: rgb(195, 144, 171);
-           
+            background-color: rgb(195, 144, 171); 
         }
+
         p{ 
             font-size: 1.2rem;
             padding: 1.3rem;
             text-align: center;
-           
         }
        
     </style>
 </head>
+
 
 
 <body>
@@ -30,32 +30,31 @@
         <p class="highlight" data-count="0">Lorem, ipsum dolor sit amet consectetur adipisicing elit.  count : <span class="count">0</span></p>
         
     </div>
+
     <script>
        const changeBg = document.querySelector('#textContainer');
-      
        changeBg.addEventListener('click', (e)=>{
         if(e.target.classList.contains('highlight')){
 
             const  paragraph = e.target;
-
-            let count = parseInt(e.target.getAttribute('data-count'))
+            let count = parseInt(paragraph.getAttribute('data-count'))
             count ++;
 
             paragraph.setAttribute('data-count' , count);
 
            const  span = paragraph.querySelector('span')
            span.textContent = count;
-           
+
            paragraph.style.backgroundColor = 'yellow'
 
+           paragraph.addEventListener('mouseleave',()=>{
+            paragraph.style.backgroundColor = ""
+           });
+        
         }
-
-       
-
        })
-
-
-      
+       
     </script>
+
 </body>
 </html>
