@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <table border="1" id="userTable">
+        <tr>
+           <th id="name">Name</th>
+           <th id="email">Email</th>
+           <th id="company">Company</th>
+           <th id="address">Address</th>
+           <th id="website">Website</th>
+        </tr>
+    </table>
+
+    <script>
+        const headers = document.querySelectorAll('th');
+        const table = document.getElementById('userTable');
+
+        async function userData() {
+            const userResponse = await fetch('https://jsonplaceholder.typicode.com/users/');
+            const users = await userResponse.json();
+            try {
+                users.forEach(user => {
+                    const tr = document.createElement('tr');
+                    
+                    headers.forEach(th => {
+                        const td = document.createElement('td');
+                        let value;
+                        
+                        if (th.id === "company") {
+                            value = user.company.name;
+                      
+                        } else {
+                            value = user[th.id];
+                        }
+    
+                        td.textContent = value;
+                        tr.appendChild(td); 
+                        table.appendChild(tr); 
+                    });
+    
+                    
+                });
+            } catch (error) {
+                console.log("user not found")
+            }
+            }
+
+
+        userData();
+    </script>
+</body>
+</html>
+

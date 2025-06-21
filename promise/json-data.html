@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Address</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        
+
+       async function userData() {
+        let getResponse = await fetch('https://jsonplaceholder.typicode.com/users/');
+        let user = await    getRespons. json()
+        console.log(user)
+        
+       }
+       userData()
+
+    
+
+    </script>
+</body>
+</html>

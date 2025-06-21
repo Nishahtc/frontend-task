@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="counter()">click</button>
+    <script>
+        let count = 0;
+        
+
+        function counter() {
+            count++;
+            p.textContent = "count" + count;
+
+        }
+        let p = document.createElement("p")
+        p.textContent = "count: " + count;
+        document.body.appendChild(p)
+        counter()
+    </script>
+</body>
+
+</html>

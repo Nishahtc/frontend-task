@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <form id="marks">
+       <div>
+        <label for="math">Enter math marks</label>
+        <input type="number" name="math" id="math" min="1" max="99"  required>
+       </div>
+       <div>
+        <label for="english">Enter english marks</label>
+        <input type="number" name="english" id="english" min="1" max="99"  required>
+       </div>
+       <div>
+        <label for="hindi">Enter hindi marks</label>
+        <input type="number" name="hindi" id="hindi" min="1" max="99" class="marks" required>
+       </div>
+       <div>
+        <label for="science">Enter science marks</label>
+        <input type="number" name="science" id="science" min="1" max="99"  required>
+       </div>
+       <div>
+        <label for="sst">Enter social study marks</label>
+        <input type="number" name="sst" id="sst" min="1" max="99"  required>
+       </div>
+
+        <button type="submit">submit</button>
+    </form>
+    <p id="result">Result : </p>
+       
+</head>
+<body>
+    <script>
+    
+        const form = document.querySelector("#marks")
+        const result = document.querySelector("#result")
+        form.addEventListener("submit",(e)=>{
+            calculate(e)
+           
+
+        })
+      function calculate(e) {
+
+        e.preventDefault()
+        
+        
+        let math = parseInt(e.target.math.value)
+        let english =parseInt( e.target.english.value)
+        let hindi =parseInt( e.target.hindi.value)
+        let science = parseInt(e.target.science.value)
+        let sst =parseInt( e.target.sst.value)
+        let total = 500;
+        let marks = math + english + hindi + science + sst
+        console.log(typeof(marks), marks)
+        let percent =(marks / 500) * 100
+        console.log(percent)
+
+        result.innerText = `result = ${percent}`
+
+        
+      }
+     
+    
+        
+    </script>
+   
+
+</body>
+</html>

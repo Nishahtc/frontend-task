@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            padding: 16px, 20px;
+            border-radius: 5px;
+           
+            font-size: 1rem;
+
+           
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="red  btn">Red</button>
+        <button class="blue btn">blue</button>
+        <button class="purple btn">purple</button>
+        <button class="pink btn">pink</button>
+        <button class="black btn">black</button>
+        <button class="yellow btn">yellow</button>
+    </div>
+    <script>
+        const btnGroup = document.querySelectorAll('.btn')
+        btnGroup.forEach(element => {
+           element.addEventListener('click', ()=>{
+            const color = element.classList[0]
+            // const color = element.dataset.color; need to use data-color="color name" in html
+          document.body.style.backgroundColor = color;
+           
+        
+           })
+            
+            
+        });
+    </script>
+</body>
+</html>

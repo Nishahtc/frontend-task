@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 50%;
+            max-width: 100%;
+            display: none;
+           
+        }
+       
+    </style>
+   
+</head>
+<body>
+    <img src="./person.jpg" alt="" id="img">
+    <button  id="btn">click</button>
+    <script>
+        const button = document.querySelector('#btn')
+        const image = document.querySelector('#img')
+
+        button.addEventListener('click',()=>{
+            if(image.style.display == 'block'){
+               image.style.display = 'none'
+            }
+            else{
+                image.style.display = 'block'
+            }
+        })
+    </script>
+
+
+
+  
+</body>
+</html>

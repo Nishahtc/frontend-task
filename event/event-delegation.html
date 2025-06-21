@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ul">
+        <li><button class="btn">One</button></li>
+        <li><button class="btn">Two</button></li>
+        <li><button class="btn">Three</button></li>
+        <li><button class="btn">Four</button></li>
+        <li><button class="btn">Five</button></li>
+    </ul>
+    <script>
+        const ul = document.querySelector("#ul")
+        ul.addEventListener('click',(e)=>{
+            if(e.target.classList.contains("btn")){
+                console.log(e.target.textContent)
+            }
+
+        })
+    </script>
+</body>
+</html>
